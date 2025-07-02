@@ -21,3 +21,9 @@ As a software engineer, I am driven by a passion for harnessing technology to ma
 If you'd like to get in touch or explore potential collaboration opportunities, please don't hesitate to
 - **Email**: [contact@silitonix.ir](mailto:contact@silitonix.ir?subject=[GitHub]%20)
 - **GitHub**: [GitHub Profile](https://github.com/Silitonix)
+
+<p align="center">
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img src="https://github-profile-trophy.vercel.app/?username=saeedmfarahani" alt="GitHub Trophy" />
+  </a>
+</p>
