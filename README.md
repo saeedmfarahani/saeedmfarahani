@@ -2,13 +2,6 @@
     <img width="120px" height="300px" src="https://raw.githubusercontent.com/Silitonix/Silitonix/refs/heads/main/logo-dark.svg">
 </div>
 
-# 🚀 Explore My Passion for Science and Technology
-
-As a software engineer, I am driven by a passion for harnessing technology to make a positive impact on people's lives. With a focus on innovation and problem-solving, I strive to create solutions that simplify everyday tasks and improve overall quality of life.
-
-## 🔭 Current Projects
-- [*PAPISM*](https://github.com/Silitonix/PAPIS) Easy to use api system for php
-
 ## 🌱 Currently Developing
 - **Computer software enginearing**: Currently pursuing my Bachelor's degree in Computer Science at Amir Kabir Technical University.
 
