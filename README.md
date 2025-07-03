@@ -2,14 +2,14 @@
     <img width="120px" height="300px" src="https://raw.githubusercontent.com/Silitonix/Silitonix/refs/heads/main/logo-dark.svg">
 </div>
 
-# 🚀 Explore My Passion for Science and Technology
+# <img width="29px" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/refs/heads/main/Travel%20and%20Places/Rocket.webp"> Explore My Passion for Science and Technology
 
 As a software engineer, I am driven by a passion for harnessing technology to make a positive impact on people's lives. With a focus on innovation and problem-solving, I strive to create solutions that simplify everyday tasks and improve overall quality of life.
 
-## 🔭 Current Projects
+## <img width="29px" src="https://github.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/raw/refs/heads/main/Objects/Telescope.webp"> Current Projects
 - [*PAPISM*](https://github.com/Silitonix/PAPIS) Easy to use api system for php
 
-## 🌱 Currently Developing
+## <img width="29px" src="https://github.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/raw/refs/heads/main/Animals%20and%20Nature/Seedling.webp"> Currently Developing
 - **Computer software enginearing**: Currently pursuing my Bachelor's degree in Computer Science at Amir Kabir Technical University.
 
 ## 🌍 Language Skills
