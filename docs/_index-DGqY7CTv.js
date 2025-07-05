@@ -1,1 +1,0 @@
-import{w as e,o as n}from"./chunk-QMGIS6GS-hoMvXFpG.js";function i({}){return[{title:"New app"},{name:"description",content:"Welcome new app!"}]}const r=e(function(){return n.jsx("div",{children:"Hello world!"})});export{r as default,i as meta};
