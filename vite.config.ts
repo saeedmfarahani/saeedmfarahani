@@ -13,9 +13,6 @@ export default defineConfig((env) => {
         }
       : undefined;
   return {
-    build: {
-      outDir: "./docs",
-    },
     plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
     resolve: {
       ...alias,
