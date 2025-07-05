@@ -13,6 +13,11 @@ export default defineConfig((env) => {
         }
       : undefined;
   return {
+    build: {
+      assetsDir: '', // Set to empty string to output assets in root
+      outDir: 'dist', // Your output directory
+    },
+    base: './',
     plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
     resolve: {
       ...alias,
