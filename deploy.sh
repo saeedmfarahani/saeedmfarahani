@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir docs
 bun run build &&
 rm -r docs/* &&
 cp CNAME docs/CNAME &&
