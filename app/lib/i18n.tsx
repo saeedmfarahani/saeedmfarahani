@@ -16,7 +16,7 @@ const lang_default = "en";
 
 function iaddress(to: To) {
   const { lang } = useParams();
-  if (!lang) return to;
+  if (!lang || lang == lang_default) return to;
   if (typeof to === "object" && to.pathname?.startsWith("/")) {
     to.pathname = `${lang}${to.pathname}`;
   } else if (typeof to === "string" && to.startsWith("/")) {

@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { Contact, Menu } from "lucide-react";
 
 import {
   Accordion,
@@ -23,7 +23,7 @@ import {
   SheetTrigger,
 } from "~/components/ui/sheet";
 import { ThemeToggle } from "~/components/ui/theme-toggle";
-import { Link } from "~/lib/i18n";
+import { NavLink } from "~/lib/i18n";
 
 interface MenuItem {
   title: string;
@@ -40,16 +40,6 @@ interface NavbarProps {
     title: string;
   };
   menu?: MenuItem[];
-  auth?: {
-    login: {
-      title: string;
-      url: string;
-    };
-    signup: {
-      title: string;
-      url: string;
-    };
-  };
 }
 
 function Navbar({
@@ -65,10 +55,6 @@ function Navbar({
       url: "/about",
     },
   ],
-  auth = {
-    login: { title: "Login", url: "#" },
-    signup: { title: "Sign up", url: "#" },
-  },
 }: NavbarProps) {
   return (
     <section className="py-4 container mx-auto">
@@ -76,11 +62,11 @@ function Navbar({
       <nav className="hidden justify-between lg:flex">
         <div className="flex items-center gap-6">
           {/* Logo */}
-          <a href={logo.url} className="flex items-center gap-2">
+          <NavLink to={logo.url} className="flex items-center gap-2">
             <span className="text-lg font-semibold tracking-tighter">
               {logo.title}
             </span>
-          </a>
+          </NavLink>
           <div className="flex items-center justify-center grow shrink">
             <NavigationMenu>
               <NavigationMenuList>
@@ -98,7 +84,9 @@ function Navbar({
       <div className="block px-4 lg:hidden">
         <div className="flex gap-4">
           {/* Logo */}
-          <Link to={logo.url} className="flex items-center gap-2"></Link>
+          <NavLink to={logo.url} className="flex items-center gap-2">
+            {logo.title}
+          </NavLink>
           <div className="grow" />
           <ThemeToggle />
           <Sheet>
@@ -110,10 +98,9 @@ function Navbar({
             <SheetContent className="overflow-y-auto">
               <SheetHeader>
                 <SheetTitle>
-                  <Link
-                    to={logo.url}
-                    className="flex items-center gap-2"
-                  ></Link>
+                  <NavLink to={logo.url} className="flex items-center gap-2">
+                    {logo.title}
+                  </NavLink>
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-6 p-4">
@@ -178,15 +165,15 @@ function renderMobileMenuItem(item: MenuItem) {
   }
 
   return (
-    <Link key={item.title} to={item.url} className="text-md font-semibold">
+    <NavLink key={item.title} to={item.url} className="text-md font-semibold">
       {item.title}
-    </Link>
+    </NavLink>
   );
 }
 
 function SubMenuLink({ item }: { item: MenuItem }) {
   return (
-    <Link
+    <NavLink
       className="flex w-sm flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
       to={item.url}
     >
@@ -199,7 +186,7 @@ function SubMenuLink({ item }: { item: MenuItem }) {
           </p>
         )}
       </div>
-    </Link>
+    </NavLink>
   );
 }
 
