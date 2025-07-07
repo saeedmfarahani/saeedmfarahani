@@ -1,19 +1,13 @@
-import Hero from "~/components/custom/hero";
 import type { Route } from "./+types/_index";
-import NavBar from "~/components/custom/navigation-bar";
+import { t } from "i18next";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Saeed M Farahani" },
-    { name: "description", content: "Welcome my portfolio!" },
+    { title: "New app" },
+    { name: "description", content: "Welcome new app!" },
   ];
 }
 
 export default function _index() {
-  return (
-    <>
-      <NavBar />
-      <Hero />
-    </>
-  );
+  return <div>{t("hello")}</div>;
 }
