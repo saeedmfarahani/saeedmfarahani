@@ -1,0 +1,1 @@
+import{w as t,o as e}from"./chunk-QMGIS6GS-C_Kj_Nco.js";import{t as n}from"./i18next-Dvke3GE9.js";function p({}){return[{title:"New app"},{name:"description",content:"Welcome new app!"}]}const m=t(function(){return e.jsx("div",{children:n("hello")})});export{m as default,p as meta};
