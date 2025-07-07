@@ -1,3 +1,4 @@
+import Navbar from "~/components/navigation-bar";
 import type { Route } from "./+types/_index";
 import { t } from "i18next";
 
@@ -9,5 +10,9 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function _index() {
-  return <div>{t("hello")}</div>;
+  return (
+    <div>
+      <Navbar></Navbar>
+    </div>
+  );
 }
