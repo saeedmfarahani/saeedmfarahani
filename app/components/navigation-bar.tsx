@@ -50,10 +50,8 @@ function Navbar({
   },
   menu = [
     { title: "Home", url: "/" },
-    {
-      title: "About me",
-      url: "/about",
-    },
+    { title: "Blog", url: "/blog" },
+    { title: "About me", url: "/about" },
   ],
 }: NavbarProps) {
   return (
