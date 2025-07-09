@@ -1,1 +1,0 @@
-import{w as o,o as t}from"./chunk-QMGIS6GS-Bv8HMQaa.js";import{N as e}from"./navigation-bar-CbrtRKZI.js";import"./i18n-D8adk6NE.js";import"./index-AyW1R1uN.js";function s({}){return[{title:"Saeed M Farahani"},{name:"description",content:"Welcome to my website"}]}const p=o(function(){return t.jsx("div",{children:t.jsx(e,{})})});export{p as default,s as meta};

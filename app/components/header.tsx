@@ -1,12 +1,11 @@
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { Sky, OrthographicCamera, useGLTF } from "@react-three/drei";
+import { OrthographicCamera, useGLTF } from "@react-three/drei";
 import { Mesh } from "three";
-import { Suspense, useRef } from "react";
+import { useRef } from "react";
 import { GLTFLoader } from "three/addons";
-import { ParkingMeter } from "lucide-react";
 import Navbar from "./navigation-bar";
 interface HeroProp {}
-
+import { EffectComposer, ToneMapping } from "@react-three/postprocessing";
 function Computer() {
   const computer = useRef<Mesh>(null);
   const gltf = useLoader(GLTFLoader, "/assets/3D/computer.glb");
@@ -33,6 +32,9 @@ function Hero({}: HeroProp) {
           rotation={[Math.atan(-1 / Math.sqrt(2)), -Math.PI / 4, 0, "YXZ"]}
         />
         <Computer />
+        <EffectComposer>
+          <ToneMapping/>
+        </EffectComposer>
       </Canvas>
     </div>
   );
