@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import en from "~/localize/en";
-import { data, useParams } from "react-router";
+import { data, useLocation, useParams } from "react-router";
 import { StateError } from "~/lib/error";
 import { NavLink } from "react-router";
 import { Link } from "react-router";
@@ -16,14 +16,16 @@ const lang_default = "en";
 const lang_key = "vite-lang";
 export const lang_supported = Object.keys(lang_res);
 
-
-
-export function getLang() {
+export function iUseLocation(new_lang?: string) {
   const { lang } = useParams();
-  return lang || lang_default;
+  const loc = useLocation();
+  let { pathname } = loc;
+  if (lang) pathname = pathname.slice(3);
+  if (new_lang) pathname = `/${new_lang}${pathname}`;
+  return { ...loc, pathname };
 }
 
-function iaddress(to: To) {
+function iaddr(to: To) {
   const { lang } = useParams();
   if (!lang || lang == lang_default) return to;
   if (typeof to === "object" && to.pathname?.startsWith("/")) {
@@ -35,12 +37,12 @@ function iaddress(to: To) {
 }
 
 function ILink(props: LinkProps) {
-  const to = iaddress(props.to);
+  const to = iaddr(props.to);
   return <Link {...props} to={to} />;
 }
 
 function INavLink(props: NavLinkProps) {
-  const to = iaddress(props.to);
+  const to = iaddr(props.to);
   return <NavLink {...props} to={to} />;
 }
 
@@ -75,4 +77,4 @@ i18n
     },
   });
 
-export { INavLink as NavLink, ILink as Link };
+export { INavLink as NavLink, ILink as Link, iUseLocation as useLocation };

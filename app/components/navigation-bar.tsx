@@ -24,7 +24,7 @@ import {
   SheetTrigger,
 } from "~/components/ui/sheet";
 import { ThemeToggle } from "~/components/ui/theme-toggle";
-import { getLang, lang_supported } from "~/lib/i18n";
+import { lang_supported, useLocation } from "~/lib/i18n";
 import { NavLink } from "react-router";
 import {
   DropdownMenuContent,
@@ -208,12 +208,13 @@ function LanguageSwitch() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {lang_supported.map((code) => {
+          const newloc = useLocation(code);
           return (
-            <NavLink to={`/${code}`}>
-              <DropdownMenuItem key={code} className="cursor-pointer">
+            <DropdownMenuItem key={code} className="cursor-pointer">
+              <NavLink to={newloc}>
                 {t("flag", { lng: code })} {t("name", { lng: code })}
-              </DropdownMenuItem>
-            </NavLink>
+              </NavLink>
+            </DropdownMenuItem>
           );
         })}
       </DropdownMenuContent>
