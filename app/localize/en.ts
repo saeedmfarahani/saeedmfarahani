@@ -1,6 +1,12 @@
 const en = {
   translation: {
-    hellow: "Hello world!",
+    name: "English",
+    flag: "🇬🇧",
+    navbar: {
+      home: "Home",
+      blog: "Blog",
+      about: "About ME",
+    },
   },
 };
 

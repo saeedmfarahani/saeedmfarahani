@@ -1,3 +1,4 @@
+import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
 import { Contact, Menu } from "lucide-react";
 
 import {
@@ -23,7 +24,14 @@ import {
   SheetTrigger,
 } from "~/components/ui/sheet";
 import { ThemeToggle } from "~/components/ui/theme-toggle";
-import { NavLink } from "~/lib/i18n";
+import { getLang, lang_supported } from "~/lib/i18n";
+import { NavLink } from "react-router";
+import {
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import { t } from "i18next";
 
 interface MenuItem {
   title: string;
@@ -49,9 +57,9 @@ function Navbar({
     title: "Saeed M Farahani - (🚧 wip)",
   },
   menu = [
-    { title: "Home", url: "/" },
-    { title: "Blog", url: "/blog" },
-    { title: "About me", url: "/about" },
+    { title: t("navbar.home"), url: "/" },
+    { title: t("navbar.blog"), url: "/blog" },
+    { title: t("navbar.about"), url: "/about" },
   ],
 }: NavbarProps) {
   return (
@@ -74,6 +82,7 @@ function Navbar({
           </div>
         </div>
         <div className="flex gap-2">
+          <LanguageSwitch />
           <ThemeToggle />
         </div>
       </nav>
@@ -135,7 +144,7 @@ function renderMenuItem(item: MenuItem) {
   }
 
   return (
-    <NavigationMenuItem key={item.title}>
+    <NavigationMenuItem key={item.url}>
       <NavigationMenuLink
         href={item.url}
         className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors bg-muted hover:bg-background hover:text-accent-foreground"
@@ -163,7 +172,7 @@ function renderMobileMenuItem(item: MenuItem) {
   }
 
   return (
-    <NavLink key={item.title} to={item.url} className="text-md font-semibold">
+    <NavLink key={item.url} to={item.url} className="text-md font-semibold">
       {item.title}
     </NavLink>
   );
@@ -185,6 +194,30 @@ function SubMenuLink({ item }: { item: MenuItem }) {
         )}
       </div>
     </NavLink>
+  );
+}
+/* dropdown flags to select using emoji [fa,en] */
+function LanguageSwitch() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="icon">
+          {t("flag")}
+          <span className="sr-only">Language switch</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        {lang_supported.map((code) => {
+          return (
+            <NavLink to={`/${code}`}>
+              <DropdownMenuItem key={code} className="cursor-pointer">
+                {t("flag", { lng: code })} {t("name", { lng: code })}
+              </DropdownMenuItem>
+            </NavLink>
+          );
+        })}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
 

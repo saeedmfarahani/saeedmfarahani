@@ -8,11 +8,20 @@ import { Link } from "react-router";
 import type { NavLinkProps } from "react-router";
 import type { LinkProps } from "react-router";
 import type { To } from "react-router";
+import fa from "~/localize/fa";
 
 /* add new languages to the resources */
-const resources = { en };
-const lang_key = "vite-lang";
+const lang_res = { en, fa };
 const lang_default = "en";
+const lang_key = "vite-lang";
+export const lang_supported = Object.keys(lang_res);
+
+
+
+export function getLang() {
+  const { lang } = useParams();
+  return lang || lang_default;
+}
 
 function iaddress(to: To) {
   const { lang } = useParams();
@@ -46,7 +55,7 @@ export function initI18n() {
 
   const current = localStorage.getItem("vite");
   if (lang == current) return;
-  if (!Object.hasOwn(resources, lang)) {
+  if (!Object.hasOwn(lang_res, lang)) {
     throw new StateError(404);
   }
   localStorage.setItem(lang_key, lang);
@@ -56,7 +65,7 @@ export function initI18n() {
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
-    resources,
+    resources: lang_res,
     lng:
       typeof window == "undefined"
         ? lang_default
