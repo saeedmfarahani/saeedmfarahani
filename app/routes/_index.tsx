@@ -11,7 +11,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function about() {
   return (
-    <div>
+    <div className="bg-muted">
       <Hero />
     </div>
   );

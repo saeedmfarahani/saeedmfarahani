@@ -138,7 +138,7 @@ function renderMenuItem(item: MenuItem) {
     <NavigationMenuItem key={item.title}>
       <NavigationMenuLink
         href={item.url}
-        className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground"
+        className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors bg-muted hover:bg-background hover:text-accent-foreground"
       >
         {item.title}
       </NavigationMenuLink>
@@ -172,7 +172,7 @@ function renderMobileMenuItem(item: MenuItem) {
 function SubMenuLink({ item }: { item: MenuItem }) {
   return (
     <NavLink
-      className="flex w-sm flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
+      className="flex w-sm flex-row gap-4 rounded-md p-3 leading-none bg-muted no-underline transition-colors outline-none select-none hover:bg-background hover:text-accent-foreground"
       to={item.url}
     >
       <div className="text-foreground">{item.icon}</div>
