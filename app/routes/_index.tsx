@@ -1,6 +1,6 @@
 import Navbar from "~/components/navigation-bar";
 import type { Route } from "./+types/_index";
-import { t } from "i18next";
+import Hero from "~/components/header";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,7 +12,7 @@ export function meta({}: Route.MetaArgs) {
 export default function about() {
   return (
     <div>
-      <Navbar></Navbar>
+      <Hero />
     </div>
   );
 }
