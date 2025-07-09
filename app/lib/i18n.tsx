@@ -21,7 +21,8 @@ export function iUseLocation(new_lang?: string) {
   const loc = useLocation();
   let { pathname } = loc;
   if (lang) pathname = pathname.slice(3);
-  if (new_lang) pathname = `/${new_lang}${pathname}`;
+  if (new_lang && new_lang !== lang_default)
+    pathname = `/${new_lang}${pathname}`;
   return { ...loc, pathname };
 }
 

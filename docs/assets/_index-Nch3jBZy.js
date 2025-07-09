@@ -1,4 +1,4 @@
-import{r as Ym,t as lx,v as cx,a as He,o as Jt,w as Pb}from"./chunk-QMGIS6GS-vUNddvvT.js";import"./i18n-B9MYlI49.js";import{N as Ib}from"./navigation-bar-BLHwHyUP.js";import"./index-Bv7YkpQ1.js";/**
+import{r as Ym,t as lx,v as cx,a as He,o as Jt,w as Pb}from"./chunk-QMGIS6GS-vUNddvvT.js";import"./i18n-Bm4eKCj4.js";import{N as Ib}from"./navigation-bar-DrgxUF_M.js";import"./index-Bv7YkpQ1.js";/**
  * @license
  * Copyright 2010-2025 Three.js Authors
  * SPDX-License-Identifier: MIT

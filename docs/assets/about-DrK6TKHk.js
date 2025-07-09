@@ -1,0 +1,1 @@
+import{w as o,o as t}from"./chunk-QMGIS6GS-vUNddvvT.js";import{N as e}from"./navigation-bar-DrgxUF_M.js";import"./i18n-Bm4eKCj4.js";import"./index-Bv7YkpQ1.js";function m({}){return[{title:"New app"},{name:"description",content:"Welcome new app!"}]}const s=o(function(){return t.jsx("div",{children:t.jsx(e,{})})});export{s as default,m as meta};
