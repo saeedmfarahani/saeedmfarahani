@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import en from "~/localize/en";
-import { data, useLocation, useParams } from "react-router";
+import { data, redirect, useLocation, useParams } from "react-router";
 import { StateError } from "~/lib/error";
 import { NavLink } from "react-router";
 import { Link } from "react-router";
@@ -21,16 +21,17 @@ export function iUseLocation(new_lang?: string) {
   const loc = useLocation();
   let { pathname } = loc;
   if (lang) pathname = pathname.slice(3);
-  if (new_lang && new_lang !== lang_default)
+  if (new_lang && new_lang !== lang_default) {
     pathname = `/${new_lang}${pathname}`;
+  }
   return { ...loc, pathname };
 }
 
 function iaddr(to: To) {
   const { lang } = useParams();
-  if (!lang || lang == lang_default) return to;
+  if (!lang || lang === lang_default) return to;
   if (typeof to === "object" && to.pathname?.startsWith("/")) {
-    to.pathname = `${lang}${to.pathname}`;
+    to.pathname = `/${lang}${to.pathname}`;
   } else if (typeof to === "string" && to.startsWith("/")) {
     to = `/${lang}${to}`;
   }
