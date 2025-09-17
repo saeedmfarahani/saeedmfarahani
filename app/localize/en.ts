@@ -6,6 +6,7 @@ const en = {
       home: "Home",
       blog: "Blog",
       about: "About ME",
+      github: "Github",
     },
   },
 };

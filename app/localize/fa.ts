@@ -6,6 +6,7 @@ const fa = {
       home: "خانه",
       blog: "بلاگ",
       about: "درباره من",
+      github: "گیت هاب",
     },
   },
 };

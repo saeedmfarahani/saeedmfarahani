@@ -52,7 +52,7 @@ interface NavbarProps {
 
 function Navbar({
   logo = {
-    url: "http://saeedmfarahni.ir",
+    url: "http://saeedmfarahani.ir",
     alt: "logo",
     title: "Saeed M Farahani - (🚧 wip)",
   },
@@ -60,6 +60,7 @@ function Navbar({
     { title: t("navbar.home"), url: "/" },
     { title: t("navbar.blog"), url: "/blog" },
     { title: t("navbar.about"), url: "/about" },
+    { title: t("navbar.github"), url: "http://github.com/saeedmfarahani" },
   ],
 }: NavbarProps) {
   return (
