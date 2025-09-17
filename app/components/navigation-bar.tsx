@@ -1,6 +1,8 @@
 import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
-import { Contact, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 
+import { t } from "i18next";
+import { NavLink } from "react-router";
 import {
   Accordion,
   AccordionContent,
@@ -25,13 +27,11 @@ import {
 } from "~/components/ui/sheet";
 import { ThemeToggle } from "~/components/ui/theme-toggle";
 import { lang_supported, useLocation } from "~/lib/i18n";
-import { NavLink } from "react-router";
 import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { t } from "i18next";
 
 interface MenuItem {
   title: string;
